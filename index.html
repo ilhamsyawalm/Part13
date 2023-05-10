@@ -12,17 +12,17 @@
 <body>
     <nav>
         <ul class="kiri">
-            <li><a href="#">Raos Food</a></li>
+            <li><a href="#awal" class="page-scroll">Raos Food</a></li>
         </ul>
         <input type="search" placeholder="Search" class="tengah">
         <ul class="kanan">
-            <li><a href="#">Profile</a></li>
-            <li><a href="#checkout">Cart</a></li>
-            <li><a href="#rekomen">Recommendation</a></li>
+            <li><a href="#checkout" class="page-scroll">Cart</a></li>
+            <li><a href="#rekomen" class="page-scroll">Recommendation</a></li>
+            <li><a href="#footer" class="page-scroll">Payment</a></li>
         </ul>
     </nav>
     <main>
-        <article class="information">
+        <article id="awal" class="information">
             <h1>Shopping Cart</h1>
         </article>
         <article class="checkout" id="checkout">
@@ -118,7 +118,7 @@
             <button class="lain">See more</button>
         </article>
     </main>
-    <footer>
+    <footer id="footer">
         <div class="bawah">
             <div class="kotakan satu">
                 <h2>Raos Food</h2>
@@ -141,6 +141,8 @@
         <h4> &copy; By Ilham Syawal Mustaqim</h4>
     </footer>
 </body>
+<script src="jquery-3.6.1.min.js"></script>
+<script src="scroll.js"></script>
 <script src="script.js"></script>
 
 </html>
