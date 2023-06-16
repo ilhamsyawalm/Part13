@@ -1,0 +1,38 @@
+[
+  {
+    "nama": "Avocado",
+    "gambar": "./Gambar/avocado.jpg",
+    "harga": 10000,
+    "keterangan": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis adipisci veniam velit ipsum nemo doloremque."
+  },
+  {
+    "nama": "Blueberry",
+    "gambar": "./Gambar/blueberry.jpg",
+    "harga": 15000,
+    "keterangan": "Lorem ipsum dolor sit amet consectetur adipisicing veniam velit ipsum nemo doloremque."
+  },
+  {
+    "nama": "Orange",
+    "gambar": "./Gambar/orange.jpg",
+    "harga": 12000,
+    "keterangan": "Lorem ipsum dolor sit amet consectetur adipisicing elit. laweasdasd asd efdsaa efasd."
+  },
+  {
+    "nama": "Pear",
+    "gambar": "./Gambar/pear.jpg",
+    "harga": 20000,
+    "keterangan": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis adipisci veniam velit ipsum nemo doloremque."
+  },
+  {
+    "nama": "Strawberry",
+    "gambar": "./Gambar/stroberry.jpg",
+    "harga": 10000,
+    "keterangan": "Lorem ipsum dolor sit amet consectetur adipisicing veniam velit ipsum nemo doloremque."
+  },
+  {
+    "nama": "Watermelon",
+    "gambar": "./Gambar/watermelon.jpg",
+    "harga": 5000,
+    "keterangan": "Lorem ipsum dolor sit amet consectetur adipisicing elit. laweasdasd asd efdsaa efasd."
+  }
+]

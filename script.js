@@ -1,3 +1,19 @@
+// ! Untuk scroll web
+$(".page-scroll").on("click", function (e) {
+  var tujuan = $(this).attr("href");
+  var elemenTujuan = $(tujuan);
+
+  $("html,body").animate(
+    {
+      scrollTop: elemenTujuan.offset().top - 50,
+    },
+    1250,
+    "swing"
+  );
+
+  e.preventDefault();
+});
+
 // ! Harga tiap makanan
 const a = document.querySelector(".harga-alpukat");
 const b = document.querySelector(".harga-blueberry");
