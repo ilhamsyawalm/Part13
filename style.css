@@ -103,7 +103,6 @@ main {
   height: 10%;
   width: 10%;
   background-repeat: no-repeat;
-  background-position: hover;
   border-radius: 10px;
 }
 
@@ -209,36 +208,32 @@ button:active {
 }
 
 .isi {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 30px;
 }
 
 .iklan {
-  height: 30%;
-  width: 40%;
-  margin: 0 20px;
+  width: 100%;
   display: flex;
+  margin-bottom: 50px;
   flex-direction: column;
-}
-
-.kotak,
-.info,
-.tombol {
-  height: 50%;
-  width: 70%;
-  margin: 0 auto;
-}
-
-.kotak {
-  overflow: hidden;
-  border-radius: 20px;
+  transition: 0.5s;
 }
 
 .gambar-besar {
-  height: 100%;
-  width: 100%;
+  width: 75%;
+  margin: auto;
+  border-radius: 20px;
+}
+
+.info,
+.tombol {
+  height: 50%;
+  width: 75%;
+  margin: 0 auto;
 }
 
 .info {

@@ -37,9 +37,6 @@ const ongkir = document.getElementById("ongkir");
 const potongan = document.getElementById("potongan");
 const totalHarga = document.getElementById("totalHarga");
 
-console.log(ongkir.textContent);
-console.log(potongan.textContent);
-
 banyak.forEach(function (pil) {
   pil.addEventListener("input", function () {
     // Untuk harga tiap buah
@@ -63,4 +60,15 @@ banyak.forEach(function (pil) {
     potongan.innerHTML = potong;
     totalHarga.innerHTML = totalan + pajak + ongkos - potong;
   });
+});
+
+
+$.ajax({
+  url: "buah.json",
+  success: (isian) => {
+    isian.forEach((x) => console.log(x.nama));
+  },
+  error: (e) => {
+    console.log(e.responseText);
+  },
 });
