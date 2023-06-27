@@ -62,7 +62,6 @@ banyak.forEach(function (pil) {
   });
 });
 
-
 $.ajax({
   url: "buah.json",
   success: (isian) => {
