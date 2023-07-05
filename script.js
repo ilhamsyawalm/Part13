@@ -40,6 +40,30 @@ $.ajax({
 
       kiri.innerHTML = isiKeranjang;
 
+      // Perhitungan total pembelian
+      const sub = document.getElementById("sub");
+      const ppn = document.getElementById("ppn");
+      const ongkir = document.getElementById("ongkir");
+      const potongan = document.getElementById("potongan");
+      const totalHarga = document.getElementById("totalHarga");
+
+      let totalKanan = 0;
+
+      const totalPerBarang = document.querySelectorAll("#totalHargaBarang");
+
+      totalPerBarang.forEach(function (barang) {
+        totalKanan += parseInt(barang.textContent);
+        const pajak = totalKanan * 0.1;
+        const ongkos = totalKanan * 0.2;
+        const potong = totalKanan * 0.2;
+
+        sub.innerHTML = totalKanan;
+        ppn.innerHTML = pajak;
+        ongkir.innerHTML = ongkos;
+        potongan.innerHTML = potong;
+        totalHarga.innerHTML = totalKanan + pajak + ongkos - potong;
+      });
+
       // Perhitungan Payment
       const banyak = document.querySelectorAll(".dibeli input");
 
@@ -52,17 +76,48 @@ $.ajax({
           const jumlah = pil.value * nilai;
           muncul.innerHTML = jumlah;
 
-          // Perhitungan total pembelian
+          // Perhitungan Total Pembelian
+          let totalKanan = 0;
 
-          //
+          const totalPerBarang = document.querySelectorAll("#totalHargaBarang");
+
+          totalPerBarang.forEach(function (barang) {
+            totalKanan += parseInt(barang.textContent);
+            const pajak = totalKanan * 0.1;
+            const ongkos = totalKanan * 0.2;
+            const potong = totalKanan * 0.2;
+
+            sub.innerHTML = totalKanan;
+            ppn.innerHTML = pajak;
+            ongkir.innerHTML = ongkos;
+            potongan.innerHTML = potong;
+            totalHarga.innerHTML = totalKanan + pajak + ongkos - potong;
+          });
         });
       });
-      //
 
       $(".ngapus").on("click", function (e) {
         kiri.removeChild(e.target.parentElement);
 
         isiKeranjang = kiri.innerHTML;
+
+        // Perhitungan Total Pembelian
+        let totalKanan = 0;
+
+        const totalPerBarang = document.querySelectorAll("#totalHargaBarang");
+
+        totalPerBarang.forEach(function (barang) {
+          totalKanan += parseInt(barang.textContent);
+          const pajak = totalKanan * 0.1;
+          const ongkos = totalKanan * 0.2;
+          const potong = totalKanan * 0.2;
+
+          sub.innerHTML = totalKanan;
+          ppn.innerHTML = pajak;
+          ongkir.innerHTML = ongkos;
+          potongan.innerHTML = potong;
+          totalHarga.innerHTML = totalKanan + pajak + ongkos - potong;
+        });
       });
     });
   },
@@ -92,56 +147,8 @@ function keranjang(a, b, c) {
         <h3>${a}</h3>
         <p>Rp<span class="harga">${c}</span></p>
         <input type="number" min="1" value="1" name="${a}">
-        <p>Rp<span id="totalHarga">${c}</span></p>
+        <p>Rp<span id="totalHargaBarang">${c}</span></p>
         <button class="ngapus">Cancel</button>
       </div>
   `;
 }
-
-// ! Harga tiap makanan
-const a = document.querySelector(".harga-alpukat");
-const b = document.querySelector(".harga-blueberry");
-const o = document.querySelector(".harga-orange");
-
-// ! Input harga
-const nilaiAlpukat = document.querySelector(".dibeli input[name=alpukat]");
-const nilaiBlueberry = document.querySelector(".dibeli input[name=blueberry]");
-const nilaiOrange = document.querySelector(".dibeli input[name=orange]");
-const banyak = document.querySelectorAll(".dibeli input");
-
-// ! Harga total makanan
-const hargaAlpukat = document.getElementById("totalAlpukat");
-const hargaBlueberry = document.getElementById("totalBlueberry");
-const hargaOrange = document.getElementById("totalOrange");
-
-// !Payment
-const sub = document.getElementById("sub");
-const ppn = document.getElementById("ppn");
-const ongkir = document.getElementById("ongkir");
-const potongan = document.getElementById("potongan");
-const totalHarga = document.getElementById("totalHarga");
-
-banyak.forEach(function (pil) {
-  pil.addEventListener("input", function () {
-    // Untuk harga tiap buah
-    const alpuket = nilaiAlpukat.value * a.textContent;
-    const bluberry = nilaiBlueberry.value * b.textContent;
-    const oren = nilaiOrange.value * o.textContent;
-
-    hargaAlpukat.innerHTML = alpuket;
-    hargaBlueberry.innerHTML = bluberry;
-    hargaOrange.innerHTML = oren;
-
-    // Untuk payment
-    const totalan = alpuket + bluberry + oren;
-    const pajak = totalan * 0.1;
-    const ongkos = totalan * 0.2;
-    const potong = totalan * 0.2;
-
-    sub.innerHTML = totalan;
-    ppn.innerHTML = pajak;
-    ongkir.innerHTML = ongkos;
-    potongan.innerHTML = potong;
-    totalHarga.innerHTML = totalan + pajak + ongkos - potong;
-  });
-});
