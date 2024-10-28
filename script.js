@@ -105,19 +105,32 @@ $.ajax({
         let totalKanan = 0;
 
         const totalPerBarang = document.querySelectorAll("#totalHargaBarang");
+        console.log(totalPerBarang.length);
 
-        totalPerBarang.forEach(function (barang) {
-          totalKanan += parseInt(barang.textContent);
-          const pajak = totalKanan * 0.1;
-          const ongkos = totalKanan * 0.2;
-          const potong = totalKanan * 0.2;
+        if (totalPerBarang.length > 0) {
+          totalPerBarang.forEach(function (barang) {
+            totalKanan += parseInt(barang.textContent);
+            const pajak = totalKanan * 0.1;
+            const ongkos = totalKanan * 0.2;
+            const potong = totalKanan * 0.2;
+
+            sub.innerHTML = totalKanan;
+            ppn.innerHTML = pajak;
+            ongkir.innerHTML = ongkos;
+            potongan.innerHTML = potong;
+            totalHarga.innerHTML = totalKanan + pajak + ongkos - potong;
+          });
+        } else {
+          const pajak = 0;
+          const ongkos = 0;
+          const potong = 0;
 
           sub.innerHTML = totalKanan;
           ppn.innerHTML = pajak;
           ongkir.innerHTML = ongkos;
           potongan.innerHTML = potong;
           totalHarga.innerHTML = totalKanan + pajak + ongkos - potong;
-        });
+        }
       });
     });
   },
