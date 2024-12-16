@@ -105,8 +105,8 @@ $.ajax({
         let totalKanan = 0;
 
         const totalPerBarang = document.querySelectorAll("#totalHargaBarang");
-        console.log(totalPerBarang.length);
 
+        // Kondisi untuk cart kosong & berisi
         if (totalPerBarang.length > 0) {
           totalPerBarang.forEach(function (barang) {
             totalKanan += parseInt(barang.textContent);
